@@ -26,9 +26,12 @@
   },
   "files": [
     "index.js",
-    "bundle.js"
+    "bundle.js",
+    "expressions.json"
   ],
   "keywords": [
+    "regex",
+    "utility",
     "windows",
     "bundled",
     "web-ready",

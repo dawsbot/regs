@@ -46,8 +46,8 @@ const regs = require('regs');
 regs.yeoman()
 //=> /<=\s([^=>]*)\s=>/
 
-regs.yeoman('g').exec('<= var1 =>')
-//=> [ '<= var1 =>', 'var1', index: 0, input: '<= var1 =>' ]
+regs.yeoman('g').exec('<= var1 =>')[1]
+//=> 'var1'
 ```
 
 <br>
@@ -65,26 +65,45 @@ regs.yeoman('g').exec('<= var1 =>')
 <br>
 
 ## Supported regexp types
-* yeoman (`regs.yeoman()`)
+* [yeoman](#regs.yeoman([REgExpFlags])) (`regs.yeoman()`)
+* [trim](#regs.trim([REgExpFlags])) (`regs.trim()`)
 
 <br>
 
 ## API
 
-### regs.<regexp type>([flags])
+* Each function call returns a `RegExp object` which can then operate on/with.
 
-Where <regexp type> is one of the supported regex types listed in the [Supported regex types](## supported-regexp-types) section.
+* Each function call supports (*optionally*) the [officially supported RegExp flags](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) which alter behavior of the search. (ex: 'g' for global or 'i' to ignore case)
 
-##### flags
+<br>
 
-*optional*
-Type: `string`
+### regs.yeoman([RegExpFlags])
 
-#### returns
+Capture text between `<% %>` or `<%= %>`. Example:
 
-Type: `RegExp object`
+```js
+regs.yeoman().exec('<= var1 =>')[1]
+//=> 'var1'
+```
 
-Useful regular expressions for JavaScript
+<br>
+
+### regs.trim([RegExpFlags])
+
+Remove surrounding spaces from string. Example:
+
+```js
+regs.trim().exec(' var1 ')[1]
+//=> 'var1'
+```
+
+<br>
+
+## Similar
+
+* [Big list of JavaScript Regular Expressions](https://regex101.com/#javascript)
+* [Perl and PHP Regular Expressions](https://gist.github.com/nerdsrescueme/1237767)
 
 <br>
 
