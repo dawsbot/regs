@@ -1,6 +1,6 @@
 {
   "name": "regs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Useful regular expressions for JavaScript",
   "license": "MIT",
   "homepage": "https://github.com/dawsonbotsford/regs#readme",
