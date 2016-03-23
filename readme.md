@@ -16,13 +16,13 @@
           <a href="https://travis-ci.org/dawsonbotsford/regs"><img src="https://api.travis-ci.org/dawsonbotsford/regs.svg?branch=master"></a>
         </td>
         <td align="center">
-          <a href="https://ci.appveyor.com/project/dawsonbotsford/regs"><img src="http://www.gravatar.com/avatar/5f66f56cae930eb9ab2cd9e62b8285e6"></a>
+          <a href="https://ci.appveyor.com/project/dawsonbotsford/regs"><img src="https://ci.appveyor.com/api/projects/status/36mom3aoarhi72jx?svg=true"></a>
         </td>
       </tr>
     </tbody>
   </table>
 
-> descrr
+> Useful regular expressions for JavaScript
 
 <br>
 
@@ -73,7 +73,7 @@ regs.yeoman('g').exec('<= var1 =>')
 
 ### regs.<regexp type>([flags])
 
-Where <regexp type> is one of the supported regex types listed in the [Supported regex types](## Supported-regexp-types) section.
+Where <regexp type> is one of the supported regex types listed in the [Supported regex types](## supported-regexp-types) section.
 
 ##### flags
 
@@ -84,7 +84,7 @@ Type: `string`
 
 Type: `RegExp object`
 
-descrr
+Useful regular expressions for JavaScript
 
 <br>
 
