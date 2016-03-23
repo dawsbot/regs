@@ -65,7 +65,8 @@ regs.yeoman('g').exec('<= var1 =>')[1]
 <br>
 
 ## Supported regexp types
-* [yeoman](#regs.yeoman([REgExpFlags])) (`regs.yeoman()`)
+<a href="#regsyeomanregexpflags">test</a>
+* [yeoman](#regsyeomanregexpflags) (`regs.yeoman()`)
 * [trim](#regs.trim([REgExpFlags])) (`regs.trim()`)
 
 <br>
