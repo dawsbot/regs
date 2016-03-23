@@ -55,9 +55,9 @@ regs.yeoman('g').exec('<= var1 =>')[1]
 #### Web
 
 ```html
-<script src="https://rawgit.com/dawsonbotsford//master/bundle.js"></script>
+<script src="https://rawgit.com/dawsonbotsford/regs/master/bundle.js"></script>
 <script>
-  alert(regs.yeoman()));
+  alert(regs.trim().exec(' var1 ')[1]);
   //=> /<=\s([^=>]*)\s=>/
 </script>
 ```
@@ -65,9 +65,9 @@ regs.yeoman('g').exec('<= var1 =>')[1]
 <br>
 
 ## Supported regexp types
-<a href="#regsyeomanregexpflags">test</a>
-* [yeoman](#regsyeomanregexpflags) (`regs.yeoman()`)
-* [trim](#regs.trim([REgExpFlags])) (`regs.trim()`)
+
+* <a href="#regsyeomanregexpflags">yeoman</a> (`regs.yeoman()`)
+* <a href="#regstrimregexpflags">trim</a> (`regs.trim()`)
 
 <br>
 
