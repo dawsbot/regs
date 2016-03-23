@@ -17,3 +17,9 @@ test('trim', t => {
   t.is(regs.trim().exec(' var1a ')[1], 'var1a');
   t.is(regs.trim().exec('var1b   ')[1], 'var1b');
 });
+
+test('email', t => {
+  t.is(toType(regs.email()), 'regexp');
+  t.true(regs.email().test('a@gmail.com'));
+  t.same((regs.email().exec('hi@me.io')).slice(1, 4), ['hi', 'me', 'io']);
+});

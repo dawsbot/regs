@@ -68,6 +68,7 @@ regs.yeoman('g').exec('<= var1 =>')[1]
 
 * <a href="#regsyeomanregexpflags">yeoman</a> (`regs.yeoman()`)
 * <a href="#regstrimregexpflags">trim</a> (`regs.trim()`)
+* <a href="#regsemailregexpflags">email</a> (`regs.email()`)
 
 <br>
 
@@ -75,16 +76,20 @@ regs.yeoman('g').exec('<= var1 =>')[1]
 
 * Each function call returns a `RegExp object` which can then operate on/with.
 
-* Each function call supports (*optionally*) the [officially supported RegExp flags](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) which alter behavior of the search. (ex: 'g' for global or 'i' to ignore case)
+* Each function call supports (*optionally*) the [official RegExp flags](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) which alter behavior of the search. (ex: 'g' for global or 'i' to ignore case)
 
 <br>
 
 ### regs.yeoman([RegExpFlags])
 
-Capture text between `<% %>` or `<%= %>`. Example:
+Capture text between `<% %>` or `<%= %>`.
+
+`1` capture group - the value between delimeters.
+
+Example:
 
 ```js
-regs.yeoman().exec('<= var1 =>')[1]
+regs.yeoman().exec('<= var1 =>')[1];
 //=> 'var1'
 ```
 
@@ -92,11 +97,39 @@ regs.yeoman().exec('<= var1 =>')[1]
 
 ### regs.trim([RegExpFlags])
 
-Remove surrounding spaces from string. Example:
+Capture text without surrounding spaces.
+
+`1` capture group - the value between starting and ending spaces.
+
+Example:
 
 ```js
-regs.trim().exec(' var1 ')[1]
+regs.trim().exec(' var1 ')[1];
 //=> 'var1'
+```
+
+<br>
+
+### regs.email([RegExpFlags])
+
+Capture all three parts of an email address. Example:
+
+`3` capture groups -
+
+1. Name before `@`
+2. First part of the domain (between `@` and `.`)
+3. Domain suffix (`.com`, `.io`, etc.)
+
+Example:
+
+```js
+// Simple validation
+regs.email().test('name@domain.suffix');
+//=> true
+
+// Capture all parts
+regs.email().exec('hi@me.io');
+//=> [ 'hi@me.io', 'hi', 'me', 'io', index: 0, input: 'hi@me.io' ]
 ```
 
 <br>

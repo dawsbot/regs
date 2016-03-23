@@ -17,5 +17,8 @@ module.exports = {
   },
   trim: (flags) => {
     return flagHandler('trim', flags);
+  },
+  email: (flags) => {
+    return flagHandler('email', flags);
   }
 };
