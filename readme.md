@@ -36,17 +36,15 @@ npm install --save regs
 
 ## Usage
 
-
 #### Node
-
 
 ```js
 const regs = require('regs');
 
-regs.yeoman()
-//=> /<=\s([^=>]*)\s=>/
+regs.email().test('me@gmail.com');
+//=> true
 
-regs.yeoman('g').exec('<= var1 =>')[1]
+regs.yeoman().exec('<% var1 %>')[1]
 //=> 'var1'
 ```
 
@@ -58,7 +56,7 @@ regs.yeoman('g').exec('<= var1 =>')[1]
 <script src="https://rawgit.com/dawsonbotsford/regs/master/bundle.js"></script>
 <script>
   alert(regs.trim().exec(' var1 ')[1]);
-  //=> /<=\s([^=>]*)\s=>/
+  //=> 'var1'
 </script>
 ```
 
@@ -89,8 +87,8 @@ Capture text between `<% %>` or `<%= %>`.
 Example:
 
 ```js
-regs.yeoman().exec('<= var1 =>')[1];
-//=> 'var1'
+regs.yeoman().exec('<% capture this %>')[1];
+//=> 'capture this'
 ```
 
 <br>
@@ -144,8 +142,3 @@ regs.email().exec('hi@me.io');
 ## License
 
 MIT © [Dawson Botsford](http://dawsonbotsford.com)
-
-<br>
-
----
-If you like this, star it. If you want to follow me, follow me.
