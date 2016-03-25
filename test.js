@@ -25,11 +25,11 @@ test('email', t => {
 });
 
 test('issue', t => {
-  t.is(toType(regs.ghIssue()), 'regexp');
-  t.true(regs.ghIssue().test('#4'));
-  t.same(regs.ghIssue().exec('#100')[1], '100');
+  t.is(toType(regs.githubIssue()), 'regexp');
+  t.true(regs.githubIssue().test('#4'));
+  t.same(regs.githubIssue().exec('#100')[1], '100');
 
-  const myReg = regs.ghIssue('g');
+  const myReg = regs.githubIssue('g');
   t.is(myReg.exec('#98 #99')[1], '98');
   t.is(myReg.exec('#98 #99')[1], '99');
 });

@@ -67,7 +67,7 @@ regs.yeoman().exec('<% var1 %>')[1]
 * <a href="#regsyeomanregexpflags">yeoman</a> (`regs.yeoman()`)
 * <a href="#regstrimregexpflags">trim</a> (`regs.trim()`)
 * <a href="#regsemailregexpflags">email</a> (`regs.email()`)
-* <a href="#regsghIssueregexpflags">ghIssue</a> (`regs.ghIssue()`)
+* <a href="#regsgithubIssueregexpflags">githubIssue</a> (`regs.githubIssue()`)
 
 <br>
 
@@ -133,7 +133,7 @@ regs.email().exec('hi@me.io');
 
 <br>
 
-### regs.ghIssue([RegExpFlags])
+### regs.githubIssue([RegExpFlags])
 
 Capture number following a pound (GitHub issue reference)
 
@@ -142,7 +142,7 @@ Capture number following a pound (GitHub issue reference)
 Example:
 
 ```js
-regs.ghIssue().exec('#98')[1];
+regs.githubIssue().exec('#98')[1];
 //=> '98'
 ```
 
