@@ -21,7 +21,7 @@ module.exports = {
   email: (flags) => {
     return flagHandler('email', flags);
   },
-  ghIssue: (flags) => {
-    return flagHandler('ghIssue', flags);
+  githubIssue: (flags) => {
+    return flagHandler('githubIssue', flags);
   }
 };
