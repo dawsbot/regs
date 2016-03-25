@@ -67,6 +67,7 @@ regs.yeoman().exec('<% var1 %>')[1]
 * <a href="#regsyeomanregexpflags">yeoman</a> (`regs.yeoman()`)
 * <a href="#regstrimregexpflags">trim</a> (`regs.trim()`)
 * <a href="#regsemailregexpflags">email</a> (`regs.email()`)
+* <a href="#regsghIssueregexpflags">ghIssue</a> (`regs.ghIssue()`)
 
 <br>
 
@@ -128,6 +129,21 @@ regs.email().test('name@domain.suffix');
 // Capture all parts
 regs.email().exec('hi@me.io');
 //=> [ 'hi@me.io', 'hi', 'me', 'io', index: 0, input: 'hi@me.io' ]
+```
+
+<br>
+
+### regs.ghIssue([RegExpFlags])
+
+Capture number following a pound (GitHub issue reference)
+
+`1` capture group - The numeric value of the issue
+
+Example:
+
+```js
+regs.ghIssue().exec('#98')[1];
+//=> '98'
 ```
 
 <br>
