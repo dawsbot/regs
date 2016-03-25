@@ -14,12 +14,22 @@ test('yeoman', t => {
 
 test('trim', t => {
   t.is(toType(regs.trim()), 'regexp');
+  t.true(regs.trim().test(' a '));
   t.is(regs.trim().exec(' var1a ')[1], 'var1a');
-  t.is(regs.trim().exec('var1b   ')[1], 'var1b');
 });
 
 test('email', t => {
   t.is(toType(regs.email()), 'regexp');
   t.true(regs.email().test('a@gmail.com'));
   t.same((regs.email().exec('hi@me.io')).slice(1, 4), ['hi', 'me', 'io']);
+});
+
+test('issue', t => {
+  t.is(toType(regs.ghIssue()), 'regexp');
+  t.true(regs.ghIssue().test('#4'));
+  t.same(regs.ghIssue().exec('#100')[1], '100');
+
+  const myReg = regs.ghIssue('g');
+  t.is(myReg.exec('#98 #99')[1], '98');
+  t.is(myReg.exec('#98 #99')[1], '99');
 });
