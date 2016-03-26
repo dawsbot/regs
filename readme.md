@@ -67,7 +67,8 @@ regs.yeoman().exec('<% var1 %>')[1]
 * <a href="#regsyeomanregexpflags">yeoman</a> (`regs.yeoman()`)
 * <a href="#regstrimregexpflags">trim</a> (`regs.trim()`)
 * <a href="#regsemailregexpflags">email</a> (`regs.email()`)
-* <a href="#regsgithubIssueregexpflags">githubIssue</a> (`regs.githubIssue()`)
+* <a href="#regsgithubissueregexpflags">githubIssue</a> (`regs.githubIssue()`)
+* <a href="#regsmarkdownheaderregexpflags">markdownHeader</a> (`regs.markdownHeader()`)
 
 <br>
 
@@ -115,9 +116,9 @@ Capture all three parts of an email address. Example:
 
 `3` capture groups -
 
-1. Name before `@`
-2. First part of the domain (between `@` and `.`)
-3. Domain suffix (`.com`, `.io`, etc.)
+1. Name (before `@`)
+2. Domain body (between `@` and `.`)
+3. Domain suffix (`com`, `io`, etc.)
 
 Example:
 
@@ -144,6 +145,29 @@ Example:
 ```js
 regs.githubIssue().exec('#98')[1];
 //=> '98'
+```
+
+<br>
+
+### regs.markdownHeader(headerNumber [, RegExpFlags])
+
+Capture text following a markdown header pound (`#`)
+
+`1` capture group - Text following the header
+
+`headerNumber` examples:
+
+* An `h1` in markdown is `# <text>`, and the `headerNumber` should be set to 1
+* An `h3` in markdown is `### <text>`, and the `headerNumber` should be set to 3
+
+Example:
+
+```js
+regs.markdownHeader(1).exec('# my header 1')[1];
+//=> 'my header 1'
+
+regs.markdownHeader(4).exec('#### my header 4')[1];
+//=> 'my header 4'
 ```
 
 <br>

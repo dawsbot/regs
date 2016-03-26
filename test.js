@@ -33,3 +33,17 @@ test('issue', t => {
   t.is(myReg.exec('#98 #99')[1], '98');
   t.is(myReg.exec('#98 #99')[1], '99');
 });
+
+test('issue', t => {
+  t.is(toType(regs.markdownHeader()), 'regexp');
+  t.true(regs.markdownHeader(1).test('#header one'));
+  t.false(regs.markdownHeader(2).test('#header one'));
+
+  t.true(regs.markdownHeader(1, 'g').test('#header one'));
+  t.same(regs.markdownHeader(2).exec('##header two')[1], 'header two');
+  t.same(regs.markdownHeader(2, 'g').exec('## header two')[1], 'header two');
+
+  const myReg = regs.markdownHeader(3, 'gm');
+  t.is(myReg.exec('###header 3 #\n###   second header')[1], 'header 3 #');
+  t.is(myReg.exec('###header 3 #\n###   second header')[1], 'second header');
+});
