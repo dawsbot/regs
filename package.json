@@ -44,8 +44,7 @@
     "dawson"
   ],
   "dependencies": {
-    "left-pad": "git://github.com/azer/left-pad.git#bff80e3ef0db0bfaba7698606c4f623433d14355",
-    "to-type": "^1.0.4"
+    "duplichar": "^1.0.0"
   },
   "devDependencies": {
     "ava": "^0.13.0",
@@ -55,6 +54,7 @@
     "babelify": "^7.2.0",
     "browserify": "^13.0.0",
     "eslint-config-xo-space": "^0.8.0",
+    "to-type": "^1.0.4",
     "husky": "^0.11.3"
   },
   "xo": {
