@@ -1,7 +1,7 @@
 {
   "name": "regs",
   "main": "index.js",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "Useful regular expressions for JavaScript",
   "license": "MIT",
   "homepage": "https://github.com/dawsonbotsford/regs#readme",
@@ -20,15 +20,19 @@
   "browserify": {
     "transform": [
       [
-      "babelify",
-        { "presets": ["es2015"] }
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
       ]
     ]
   },
   "engines": {
     "node": ">=0.12.0"
   },
-    "scripts": {
+  "scripts": {
     "test": "xo && ava",
     "bundle": "node browserify.js",
     "precommit": "npm test && npm run bundle "
