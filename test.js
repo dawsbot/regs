@@ -34,7 +34,7 @@ test('issue', t => {
   t.is(myReg.exec('#98 #99')[1], '99');
 });
 
-test('issue', t => {
+test('markdownHeader', t => {
   t.is(toType(regs.markdownHeader()), 'regexp');
   t.true(regs.markdownHeader(1).test('#header one'));
   t.false(regs.markdownHeader(2).test('#header one'));
