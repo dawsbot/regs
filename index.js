@@ -3,14 +3,14 @@ const expressions = require('./expressions.json');
 const duplichar = require('duplichar');
 
 const flagHandler = (regexType, flags, opts) => {
-  if (expressions[regexType]) {
-    if (flags) {
-      if (opts) {
+  if (expressions.hasOwnProperty(regexType)) {
+    if (typeof flags !== 'undefined') {
+      if (typeof opts !== 'undefined') {
         return new RegExp(duplichar(expressions[regexType], opts.position, opts.multiplier), flags);
       }
       return new RegExp(expressions[regexType], flags);
     }
-    if (opts) {
+    if (typeof opts !== 'undefined') {
       return new RegExp(duplichar(expressions[regexType], opts.position, opts.multiplier));
     }
     return new RegExp(expressions[regexType]);

@@ -57,7 +57,7 @@
     "dawson"
   ],
   "dependencies": {
-    "duplichar": "^1.0.1"
+    "duplichar": "^1.0.2"
   },
   "devDependencies": {
     "ava": "^0.13.0",
