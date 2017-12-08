@@ -13,7 +13,7 @@
     <tbody>
       <tr>
         <td align="center">
-          <a href="https://travis-ci.org/dawsonbotsford/regs"><img src="https://api.travis-ci.org/dawsonbotsford/regs.svg?branch=master"></a>
+          <a href="https://travis-ci.org/dawsbot/regs"><img src="https://api.travis-ci.org/dawsbot/regs.svg?branch=master"></a>
         </td>
         <td align="center">
           <a href="https://ci.appveyor.com/project/dawsonbotsford/regs"><img src="https://ci.appveyor.com/api/projects/status/36mom3aoarhi72jx?svg=true"></a>
